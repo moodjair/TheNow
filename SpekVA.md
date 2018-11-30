@@ -1,102 +1,16 @@
-# TECHNICAL SPECIFICATION DOCUMENT VA
+# Dillinger
 
-### A.  Flow Transaksi
-Flow Transaksi
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
-  1.  Flow Inquiry VA, Create VA, Update VA, Delete VA
-    HOST  ------request------>  BTN
-    HOST  <-----response------  BTN
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-  2.  Flow Callback
-    BTN  ------request------>  HOST
-    BTN  <-----response------  HOST
+Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
 
-  3.  Flow Rekon Transksi
-    BTN  ---------ftp------->  HOST
+  - Type some Markdown on the left
+  - See HTML in the right
+  - Magic
 
-### B.Format Virtual Account
-Format VA BTN
-
-  Format VA:  (Prefix_VA)(1) 
-        + (Kode_Institusi)(4) 
-        + (Kode_Payment)(3) 
-        + (Customer_Number)(9)
-  - Prefix_VA : “9”
-  - Kode_Institusi  : “9957” (Tergantung parameter dari Operasional)
-  - Kode_Payment  : “001” (Tergantung parameter dari Operasional)
-  - Customer_Number : "123456789"
-  - Length  of VA : 17
-  Example : 99957001000009957
-
-### C.  Inquiry VA
-
-##### 1. URL 
-Url yang digunakan adalah http://<ip_address:port>/rs1/inqVA
-Metode : POST
-Header
-  - Content-Type  : application/json 
-  - key     : "key"
-
-##### 1. Request 
-Request Body
-| Field | Type | Maxlength | Format/Desc |
-| ------ | ------ | ------ | ------ |
-|id     |string  |7 |Id |
-|ref    |string |12|No. Reff (Unique pertransaction)|
-
-
-
-  Contoh Request
-  {
-    "id"    :"id",
-    "ref"   :"877556783",
-    "va"    :"99957001000009991"
-  }
-
-
-Response
-  ---------------------------------------------------------------------------
-  Field   Type  MaxLen  Format/Desc
-  ---------------------------------------------------------------------------
-  id    string  7 Id 
-  ref   string  12  No. Reff (Unique pertransaction)
-  rsp   string  19  Respon Code, “000” = Sukses 
-  rspdesc   string  50  Respon Description
-  va    string  19  Nomer VA
-  nama    string  40  Nama
-  layanan   string  40  Layanan
-  jenisbayar  string  40  Jenis Bayar
-  noid    string  20  No ID 
-  tagihan   numeric 19  Tagihan
-  flag    string  1 Flag (F=Full P=Partial)
-  expired   string  10  Expired
-  description   string  60  Description
-  terbayar  numeric 19  Amount Terbayar
-  createdate  numeric 6 Date Create (DDMMYY)
-  createtime  numeric 6 Time Create (HHMMSS)
-  ---------------------------------------------------------------------------
-
-
-  Contoh Response
-  ---------------------------------------------------------------------------
-  {
-      "id"    : "id",
-      "ref"   : "877556783",
-      "rsp"   : "000",
-      "rspdesc"   : "Transaction Success.",
-      "va"    : "99957001000009991",
-      "nama"    : "DEWI YUNDARI",
-      "layanan"   : "RAWAT INAP",
-      "jenisbayar"  : "TAGIHAN RAWAT INAP",
-      "noid"    : "08888489242",
-      "tagihan"   : 1000000,
-      "flag"    : "F",
-      "description" : "JALAN LEBAR DAUN WAY HITAM",
-      "terbayar"    : 0,
-      "createdate"  : 18112014,
-      "createtime"  : 81218
-  }
-  ---------------------------------------------------------------------------
+# New Features!
 
   - Import a HTML file and watch it magically convert to Markdown
   - Drag and drop images (requires your Dropbox account be linked)
