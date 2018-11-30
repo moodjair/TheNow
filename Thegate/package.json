@@ -1,0 +1,22 @@
+{
+  "name": "thegate",
+  "version": "1.0.0",
+  "description": "The Gateway",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Moodjair",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "ipware": "^1.0.0",
+    "moment": "^2.22.2",
+    "node-cmd": "^3.0.0",
+    "random-key": "^0.3.2",
+    "soap": "^0.25.0",
+    "superagent": "^4.0.0",
+    "superagent-proxy": "^2.0.0"
+  }
+}
